@@ -1,0 +1,65 @@
+---
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const sectionId = t('nav.contact.href').replace('#', '');
+---
+
+<section
+  id={sectionId}
+  aria-labelledby="contact-title"
+  class="py-32"
+>
+  <div class="mx-auto max-w-5xl px-6">
+    <div class="mx-auto max-w-md text-center" data-reveal>
+
+      <p class="mb-4 font-mono text-sm text-accent" aria-hidden="true">03.</p>
+
+      <h2
+        id="contact-title"
+        class="mb-6 font-heading font-bold text-text-primary"
+        style="font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15;"
+      >
+        {t('contact.title')}
+      </h2>
+
+      <p class="mb-10 text-base leading-relaxed text-text-secondary">
+        {t('contact.description')}
+      </p>
+
+      <a
+        href="mailto:natanael1cirino@gmail.com"
+        class="inline-flex items-center rounded border border-accent px-8 py-3 font-mono text-base text-accent transition-colors duration-150 hover:bg-accent/10"
+      >
+        {t('contact.cta')}
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const motionOk = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (motionOk) {
+    document.querySelectorAll<HTMLElement>('[data-reveal]').forEach((el) => {
+      el.classList.add('reveal-hidden');
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            el.classList.remove('reveal-hidden');
+            el.classList.add('reveal-visible');
+            el.addEventListener('animationend', () => el.classList.remove('reveal-visible'), { once: true });
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -60px 0px' },
+      );
+      observer.observe(el);
+    });
+  }
+</script>

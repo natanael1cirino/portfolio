@@ -37,6 +37,11 @@ export const ui = {
     'projects.title': 'Projetos',
     'projects.github.label': 'Ver código no GitHub',
     'projects.demo.label': 'Ver demonstração ao vivo',
+    'contact.title': 'Vamos conversar?',
+    'contact.description':
+      'Estou aberto a novas oportunidades e bons desafios. Se quiser trocar uma ideia sobre um projeto, uma vaga ou tecnologia, minha caixa de entrada está aberta.',
+    'contact.cta': 'Diga olá →',
+    'footer.credit': 'Projetado e construído por Natanael Cirino',
   },
   en: {
     'nav.label': 'Main navigation',
@@ -69,6 +74,11 @@ export const ui = {
     'projects.title': 'Projects',
     'projects.github.label': 'View source on GitHub',
     'projects.demo.label': 'View live demo',
+    'contact.title': "Let's talk?",
+    'contact.description':
+      "I'm open to new opportunities and good challenges. Whether you want to discuss a project, a role, or just geek out about tech, my inbox is always open.",
+    'contact.cta': 'Say hello →',
+    'footer.credit': 'Designed & built by Natanael Cirino',
   },
 } as const;
 
