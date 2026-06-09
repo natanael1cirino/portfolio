@@ -59,3 +59,15 @@ html {
     transform: none;
   }
 }
+
+/* Scroll-reveal — JS adds/removes these classes via IntersectionObserver */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 700ms ease, transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}

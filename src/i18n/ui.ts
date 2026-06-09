@@ -26,6 +26,14 @@ export const ui = {
     'hero.github.label': 'GitHub de Natanael Cirino',
     'hero.linkedin.label': 'LinkedIn de Natanael Cirino',
     'hero.email.label': 'Enviar e-mail para Natanael Cirino',
+    'about.title': 'Sobre',
+    'about.p1':
+      'Minha experiência profissional foi forjada no Exército Brasileiro, na equipe de TI da Escola de Sargentos das Armas (ESA), cuidando do ciclo completo da tecnologia: do desenvolvimento de sistemas à infraestrutura que mantém tudo funcionando.',
+    'about.p2':
+      'Essa vivência inclui desenvolvimento de funcionalidades em Laravel para sistemas internos de gestão, manutenção da intranet institucional e administração do ambiente de rede: Active Directory e GPOs, monitoramento com Zabbix, central de serviços com GLPI e segurança de endpoints. Uma combinação que me deu uma visão que poucos desenvolvedores têm: escrevo código entendendo o ambiente onde ele roda.',
+    'about.p3':
+      'Curso Ciência da Computação e sigo estudando continuamente. Meu objetivo é crescer como desenvolvedor full stack sem abrir mão da bagagem de infraestrutura que construí na prática.',
+    'about.tech.title': 'Tecnologias que uso no dia a dia',
   },
   en: {
     'nav.label': 'Main navigation',
@@ -47,6 +55,14 @@ export const ui = {
     'hero.github.label': "Natanael Cirino's GitHub",
     'hero.linkedin.label': "Natanael Cirino's LinkedIn",
     'hero.email.label': 'Send email to Natanael Cirino',
+    'about.title': 'About',
+    'about.p1':
+      'My professional experience was forged in the Brazilian Army, on the IT team of the Escola de Sargentos das Armas (ESA), handling the full technology lifecycle: from building internal systems to keeping the infrastructure running.',
+    'about.p2':
+      'That experience includes developing Laravel features for internal management systems, maintaining the institutional intranet, and managing the network environment: Active Directory and GPOs, monitoring with Zabbix, service desk with GLPI, and endpoint security. A combination that gave me a perspective few developers have: I write code with a clear understanding of the infrastructure it runs on.',
+    'about.p3':
+      "I'm pursuing a Computer Science degree and keep learning continuously. My goal is to grow as a full-stack developer without leaving behind the infrastructure knowledge I've built through hands-on experience.",
+    'about.tech.title': 'Technologies I work with daily',
   },
 } as const;
 

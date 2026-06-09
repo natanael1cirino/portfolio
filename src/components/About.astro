@@ -1,0 +1,92 @@
+---
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const sectionId = t('nav.about.href').replace('#', '');
+
+const techs = [
+  'PHP',
+  'Laravel',
+  'MySQL',
+  'JavaScript',
+  'Git & GitHub',
+  'Active Directory',
+  'Zabbix',
+  'GLPI',
+  'PowerShell',
+];
+---
+
+<section
+  id={sectionId}
+  data-reveal
+  aria-labelledby="about-title"
+  class="py-24"
+>
+  <div class="mx-auto max-w-5xl px-6">
+
+    <!-- Section heading -->
+    <div class="mb-12 flex items-center gap-4">
+      <span class="font-mono text-sm text-accent" aria-hidden="true">01.</span>
+      <h2
+        id="about-title"
+        class="font-heading text-xl font-semibold text-text-primary whitespace-nowrap"
+      >
+        {t('about.title')}
+      </h2>
+      <div class="h-px flex-1 bg-text-tertiary/20" aria-hidden="true"></div>
+    </div>
+
+    <!-- Two-column layout -->
+    <div class="grid gap-10 md:grid-cols-5">
+
+      <!-- Text: 3/5 -->
+      <div class="space-y-4 text-base leading-relaxed text-text-secondary md:col-span-3">
+        <p>{t('about.p1')}</p>
+        <p>{t('about.p2')}</p>
+        <p>{t('about.p3')}</p>
+      </div>
+
+      <!-- Tech list: 2/5 -->
+      <div class="md:col-span-2">
+        <p class="mb-4 font-mono text-xs text-text-tertiary">
+          {t('about.tech.title')}
+        </p>
+        <ul class="grid grid-cols-2 gap-x-4 gap-y-2.5" role="list">
+          {techs.map((tech) => (
+            <li class="flex items-center gap-2 text-sm text-text-secondary">
+              <span class="text-accent" aria-hidden="true">▹</span>
+              {tech}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const motionOk = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (motionOk) {
+    document.querySelectorAll<HTMLElement>('[data-reveal]').forEach((el) => {
+      el.classList.add('reveal-hidden');
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            el.classList.remove('reveal-hidden');
+            el.classList.add('reveal-visible');
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -60px 0px' },
+      );
+      observer.observe(el);
+    });
+  }
+</script>
