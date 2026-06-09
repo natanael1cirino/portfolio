@@ -1,17 +1,36 @@
 ---
 import '../styles/global.css';
+import type { Lang } from '../i18n/ui';
 
 interface Props {
-  title: string;
+  title?: string;
   description?: string;
-  lang?: string;
+  lang?: Lang;
 }
 
-const {
-  title,
-  description = 'Natanael Cirino — Portfolio',
-  lang = 'pt',
-} = Astro.props;
+const { lang = 'pt', title: titleProp, description: descProp } = Astro.props;
+
+const defaults = {
+  pt: {
+    title: 'Natanael Cirino | Desenvolvedor & Analista de TI',
+    description:
+      'Portfólio de Natanael Cirino. PHP, Laravel e infraestrutura: construindo e mantendo sistemas web no mundo real.',
+  },
+  en: {
+    title: 'Natanael Cirino | Developer & IT Analyst',
+    description:
+      "Natanael Cirino's portfolio. PHP, Laravel, and IT infrastructure: building and maintaining real-world web systems.",
+  },
+};
+
+const title = titleProp ?? defaults[lang].title;
+const description = descProp ?? defaults[lang].description;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const siteBase = Astro.site?.toString().replace(/\/$/, '') ?? '';
+const ptUrl = `${siteBase}/`;
+const enUrl = `${siteBase}/en/`;
+const ogLocale = lang === 'pt' ? 'pt_BR' : 'en_US';
 ---
 
 <!doctype html>
@@ -20,10 +39,32 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Primary meta -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- hreflang alternates -->
+    <link rel="alternate" hreflang="pt" href={ptUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={ptUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content={ogLocale} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
   </head>
   <body class="min-h-screen font-body">
     <slot />

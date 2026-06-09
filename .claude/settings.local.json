@@ -7,7 +7,8 @@
       "Bash(rm -rf _tmp)",
       "Bash(npm install *)",
       "Bash(npm run *)",
-      "PowerShell(setx PATH \"$env:PATH;$env:USERPROFILE\\\\.local\\\\bin\")"
+      "PowerShell(setx PATH \"$env:PATH;$env:USERPROFILE\\\\.local\\\\bin\")",
+      "Bash(echo.)"
     ]
   }
 }
