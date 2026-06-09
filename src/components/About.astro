@@ -81,6 +81,8 @@ const techs = [
           if (entry.isIntersecting) {
             el.classList.remove('reveal-hidden');
             el.classList.add('reveal-visible');
+            // Remove after animation so hover transitions on cards work normally
+            el.addEventListener('animationend', () => el.classList.remove('reveal-visible'), { once: true });
             observer.disconnect();
           }
         },

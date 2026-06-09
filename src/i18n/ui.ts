@@ -34,6 +34,9 @@ export const ui = {
     'about.p3':
       'Curso Ciência da Computação e sigo estudando continuamente. Meu objetivo é crescer como desenvolvedor full stack sem abrir mão da bagagem de infraestrutura que construí na prática.',
     'about.tech.title': 'Tecnologias que uso no dia a dia',
+    'projects.title': 'Projetos',
+    'projects.github.label': 'Ver código no GitHub',
+    'projects.demo.label': 'Ver demonstração ao vivo',
   },
   en: {
     'nav.label': 'Main navigation',
@@ -63,6 +66,9 @@ export const ui = {
     'about.p3':
       "I'm pursuing a Computer Science degree and keep learning continuously. My goal is to grow as a full-stack developer without leaving behind the infrastructure knowledge I've built through hands-on experience.",
     'about.tech.title': 'Technologies I work with daily',
+    'projects.title': 'Projects',
+    'projects.github.label': 'View source on GitHub',
+    'projects.demo.label': 'View live demo',
   },
 } as const;
 
