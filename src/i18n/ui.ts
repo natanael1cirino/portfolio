@@ -32,7 +32,7 @@ export const ui = {
     'about.p2':
       'Essa vivência inclui desenvolvimento de funcionalidades em Laravel para sistemas internos de gestão, manutenção da intranet institucional e administração do ambiente de rede: Active Directory e GPOs, monitoramento com Zabbix, central de serviços com GLPI e segurança de endpoints. Uma combinação que me deu uma visão que poucos desenvolvedores têm: escrevo código entendendo o ambiente onde ele roda.',
     'about.p3':
-      'Curso Ciência da Computação e sigo estudando continuamente. Meu objetivo é crescer como desenvolvedor full stack sem abrir mão da bagagem de infraestrutura que construí na prática.',
+      'Curso Engenharia de Software e sigo estudando continuamente. Meu objetivo é crescer como desenvolvedor full stack sem abrir mão da bagagem de infraestrutura que construí na prática.',
     'about.tech.title': 'Tecnologias que uso no dia a dia',
     'projects.title': 'Projetos',
     'projects.github.label': 'Ver código no GitHub',
@@ -69,7 +69,7 @@ export const ui = {
     'about.p2':
       'That experience includes developing Laravel features for internal management systems, maintaining the institutional intranet, and managing the network environment: Active Directory and GPOs, monitoring with Zabbix, service desk with GLPI, and endpoint security. A combination that gave me a perspective few developers have: I write code with a clear understanding of the infrastructure it runs on.',
     'about.p3':
-      "I'm pursuing a Computer Science degree and keep learning continuously. My goal is to grow as a full-stack developer without leaving behind the infrastructure knowledge I've built through hands-on experience.",
+      "I'm pursuing a Software Engineering degree and keep learning continuously. My goal is to grow as a full-stack developer without leaving behind the infrastructure knowledge I've built through hands-on experience.",
     'about.tech.title': 'Technologies I work with daily',
     'projects.title': 'Projects',
     'projects.github.label': 'View source on GitHub',
